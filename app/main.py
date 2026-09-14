@@ -7,8 +7,7 @@ def copy_file(command: str) -> None:
             new_file_name = tokens[2]
             if needed_command == "cp" and file_name != new_file_name:
                 try:
-                    with (open(file_name, "r") as file_in,
-                            open(new_file_name, "w") as file_out):
+                    with open(file_name, "r") as file_in, open(new_file_name, "w") as file_out:
                         data = file_in.read()
                         file_out.write(data)
                 except FileNotFoundError:
